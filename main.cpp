@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 #include "rrf.h"
 using namespace std;
 
@@ -26,7 +27,8 @@ cin >> d;
 cout << "Temperatur des Strömungsmediums T (Gültigkeit -40 - 1000°C)=" << endl;
 cin >> T;
 nu = vis(T);
-cout << "Viskosität ν: " << nu << endl;
+nu = nu*pow(10,-7);
+cout << endl << "Viskosität ν: " << nu << endl;
 Rey = Re(v,nu,d);
 
 cout << "Die berechnete Reynolds-Zahl lautet: " << Rey << endl;
