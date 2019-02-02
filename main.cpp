@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-
 double v, d, T, nu, Rey = 0;
 
 cout << "Rohrreibungsberechnung für ein gerades Rohr mit dem Medium Luft" << endl << endl << endl;
