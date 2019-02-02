@@ -3,6 +3,6 @@
 
 double Re (double v, double n, double d);
 
-double vis (double t);
+double vis (double T);
 
 #endif
