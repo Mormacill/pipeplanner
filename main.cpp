@@ -32,9 +32,14 @@ Rey = Re(v,nu,d);
 
 cout << "Die berechnete Reynolds-Zahl lautet: " << Rey << endl;
 
-
-
-
+	if (Rey < 2300)
+	{
+	cout << "INFO: Es liegt eine laminare Strömung vor!" << endl;
+	}
+	else
+	{
+	cout << "INFO: Es liegt eine turbulente Strömung vor!" << endl;
+	}
 
 
 return 0;
