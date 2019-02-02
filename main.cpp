@@ -20,11 +20,11 @@ cout << "Bestimmung der Reynolds-Zahl" << endl;
 
 cout << "Re = (v * d) / ν(T)" << endl << endl;
 
-cout << "Strömungsgeschwindigkeit v=" << endl;
+cout << "Strömungsgeschwindigkeit v= ";
 cin >> v;
-cout << "charakteristische Länge d (Rohrdurchmesser)=" << endl;
+cout << "charakteristische Länge d (Rohrdurchmesser)= ";
 cin >> d;
-cout << "Temperatur des Strömungsmediums T (Gültigkeit -40 - 1000°C)=" << endl;
+cout << "Temperatur des Strömungsmediums T (Gültigkeit -40 - 1000°C)= ";
 cin >> T;
 nu = vis(T);
 nu = nu*pow(10,-7);
