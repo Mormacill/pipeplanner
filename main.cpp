@@ -5,14 +5,14 @@ using namespace std;
 
 int main()
 {
-double v,      //Strömungsgeschwindigkeit
-double d,      //char. Länge -> Durchmesser
-double l,      //Rohrlänge
-double T,      //Temperatur des Mediums
-double nu,     //kinematische Viskosität
-double Rey,    //Reynolds-Zahl
-double rho,    //Dichte
-double lambda, //Rohrreibungszahl
+double v;      //Strömungsgeschwindigkeit
+double d;      //char. Länge -> Durchmesser
+double l;      //Rohrlänge
+double T;      //Temperatur des Mediums
+double nu;     //kinematische Viskosität
+double Rey;    //Reynolds-Zahl
+double rho;    //Dichte
+double lambda; //Rohrreibungszahl
 double dp;     //Druckverlust
 
 cout << "Rohrreibungsberechnung für ein gerades Rohr mit dem Medium Luft" << endl << endl << endl;
@@ -52,12 +52,37 @@ cout << "Die berechnete Reynolds-Zahl lautet: " << Rey << endl;
 	}
 
 
+if (Rey < 2300)
+{
+lambda = 64 / Rey;
+}
+else
+{
+//SOLVER FÜR LAMBDA IM TURBULENTEN BEREICH NACH PRANDTL/KARMAN
+double y_ceil = 1;
+double y_floor = 0;
+double eq = 1;
+double y = 0;
+double epsilon = 1e-5;
 
-// BERECHNUNG
-// VON
-// LAMBDA
+while (eq > epsilon)
+	{
+	y = y_floor + (y_ceil - y_floor) / 2;
+	eq = Karman_r (Rey,y);
+		if (eq > 0)
+		{
+		y_ceil = y;
+		}
+		else
+		{
+		y_floor = y;
+		}
+	return y;
+	}
+lambda = y;
+}
 
-lambda = 0.02;
+
 
 rho = Dichte(T);
 dp = ((rho * pow(v,2)) / 2) * lambda * (l / d);

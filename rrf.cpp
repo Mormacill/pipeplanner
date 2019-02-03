@@ -15,3 +15,8 @@ double Dichte (double T)
 {
 return 9.1756*pow(10,-17)*pow(T,6) + -1.6489*pow(10,-13)*pow(T,5) + 1.2461*pow(10,-10)*pow(T,4) + -5.45353*pow(10,-8)*pow(T,3) + 1.70866*pow(10,-5)*pow(T,2) + -0.00469795*T + 1.2755;
 }
+
+long double Karman_r (long double x, long double y)
+{
+return (1 / pow((2 * log10(x * (sqrt(y)/2.51))),2)) - y;
+}
