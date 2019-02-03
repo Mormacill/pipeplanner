@@ -18,5 +18,6 @@ return 9.1756*pow(10,-17)*pow(T,6) + -1.6489*pow(10,-13)*pow(T,5) + 1.2461*pow(1
 
 long double Karman_r (long double x, long double y)
 {
+//So umgestellt, dass linke Seite = 0
 return (1 / pow((2 * log10(x * (sqrt(y)/2.51))),2)) - y;
 }
