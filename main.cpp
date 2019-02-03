@@ -72,7 +72,7 @@ while (fabs(eq) > epsilon)
 	y = y_floor + (y_ceil - y_floor) / 2;
 	cout << y << endl;
 	eq = Karman_r (Rey,y);
-		if (eq > 0)
+		if (eq < 0)
 		{
 		y_ceil = y;
 		}
