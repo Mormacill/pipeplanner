@@ -37,10 +37,10 @@ cout << "Temperatur des Strömungsmediums T (Gültigkeit -40 - 500°C)= ";
 cin >> T;
 nu = vis(T);
 nu = nu*pow(10,-7);
-cout << endl << "Viskosität ν: " << nu << endl;
+cout << endl << endl << "--> Viskosität ν: " << nu << endl << endl;
 Rey = Re(v,nu,d);
 
-cout << "Die berechnete Reynolds-Zahl lautet: " << Rey << endl;
+cout << "--> Die berechnete Reynolds-Zahl lautet: " << Rey << endl <<endl;
 
 	if (Rey < 2300)
 	{
@@ -55,6 +55,7 @@ cout << "Die berechnete Reynolds-Zahl lautet: " << Rey << endl;
 if (Rey < 2300)
 {
 lambda = 64 / Rey;
+cout << "Der Rohrreibungsbeiwert lautet: " << lambda << endl;
 }
 else
 {
@@ -63,9 +64,10 @@ double y_ceil = 1;
 double y_floor = 0;
 double eq = 1;
 double y = 0;
-double epsilon = 1e-5;
+double epsilon = 1e-10;
 
-cout << "Der Rohrreibungsbeiwert wird nun iterativ durch die Prandtl - Karman Formel ermittelt." << endl;
+cout << "Der Rohrreibungsbeiwert wird nun iterativ durch die Prandtl - Karman Formel ermittelt." << endl << endl;
+cin.get();
 
 while (fabs(eq) > epsilon)
 	{
@@ -89,6 +91,6 @@ lambda = y;
 rho = Dichte(T);
 dp = ((rho * pow(v,2)) / 2) * lambda * (l / d);
 
-cout << "Der berechnete Druckverlust lautet: " << dp << " Pascal" << endl;
+cout << endl << "Der berechnete Druckverlust lautet: " << dp << " Pascal" << endl;
 return 0;
 }
