@@ -5,7 +5,15 @@ using namespace std;
 
 int main()
 {
-double v, d, l, T, nu, Rey, rho, lambda, dp = 0;
+double v,      //Strömungsgeschwindigkeit
+double d,      //char. Länge -> Durchmesser
+double l,      //Rohrlänge
+double T,      //Temperatur des Mediums
+double nu,     //kinematische Viskosität
+double Rey,    //Reynolds-Zahl
+double rho,    //Dichte
+double lambda, //Rohrreibungszahl
+double dp;     //Druckverlust
 
 cout << "Rohrreibungsberechnung für ein gerades Rohr mit dem Medium Luft" << endl << endl << endl;
 
