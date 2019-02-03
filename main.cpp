@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-double v, d, T, nu, Rey = 0;
+double v, d, l, T, nu, Rey, rho, lambda, dp = 0;
 
 cout << "Rohrreibungsberechnung für ein gerades Rohr mit dem Medium Luft" << endl << endl << endl;
 
@@ -23,7 +23,9 @@ cout << "Strömungsgeschwindigkeit v= ";
 cin >> v;
 cout << "charakteristische Länge d (Rohrdurchmesser)= ";
 cin >> d;
-cout << "Temperatur des Strömungsmediums T (Gültigkeit -40 - 1000°C)= ";
+cout << "Rohrlänge l= ";
+cin >> l;
+cout << "Temperatur des Strömungsmediums T (Gültigkeit -40 - 500°C)= ";
 cin >> T;
 nu = vis(T);
 nu = nu*pow(10,-7);
@@ -42,5 +44,16 @@ cout << "Die berechnete Reynolds-Zahl lautet: " << Rey << endl;
 	}
 
 
+
+// BERECHNUNG
+// VON
+// LAMBDA
+
+lambda = 0.02;
+
+rho = Dichte(T);
+dp = ((rho * pow(v,2)) / 2) * lambda * (l / d);
+
+cout << "Der berechnete Druckverlust lautet: " << dp << " Pascal" << endl;
 return 0;
 }

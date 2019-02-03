@@ -5,4 +5,6 @@ double Re (double v, double n, double d);
 
 double vis (double T);
 
+double Dichte (double T);
+
 #endif
