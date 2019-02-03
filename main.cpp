@@ -20,7 +20,7 @@ cout << "Rohrreibungsberechnung für ein gerades Rohr mit dem Medium Luft" << en
 cout << "   ┌------------┐" << endl;
 cout << "   └------------┘" << endl << endl << endl;
 
-cout << "Beliebige Taste drücken zum fortsetzen" << endl;
+cout << "Beliebige Taste drücken zum Fortsetzen" << endl;
 cin.get();
 
 cout << "Bestimmung der Reynolds-Zahl" << endl;
@@ -44,11 +44,11 @@ cout << "Die berechnete Reynolds-Zahl lautet: " << Rey << endl;
 
 	if (Rey < 2300)
 	{
-	cout << "INFO: Es liegt eine laminare Strömung vor!" << endl;
+	cout << "INFO: Es liegt eine laminare Strömung vor!" << endl << endl;
 	}
 	else
 	{
-	cout << "INFO: Es liegt eine turbulente Strömung vor!" << endl;
+	cout << "INFO: Es liegt eine turbulente Strömung vor!" << endl << endl;
 	}
 
 
@@ -65,9 +65,12 @@ double eq = 1;
 double y = 0;
 double epsilon = 1e-5;
 
-while (eq > epsilon)
+cout << "Der Rohrreibungsbeiwert wird nun iterativ durch die Prandtl - Karman Formel ermittelt." << endl;
+
+while (fabs(eq) > epsilon)
 	{
 	y = y_floor + (y_ceil - y_floor) / 2;
+	cout << y << endl;
 	eq = Karman_r (Rey,y);
 		if (eq > 0)
 		{
@@ -77,7 +80,6 @@ while (eq > epsilon)
 		{
 		y_floor = y;
 		}
-	return y;
 	}
 lambda = y;
 }
